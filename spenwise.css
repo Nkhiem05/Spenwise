@@ -1,0 +1,23 @@
+body,
+html {
+  margin: 0;
+}
+
+header {
+  background-color: red;
+}
+.boxheadertop {
+  display: flex;
+  padding-top: 8px;
+}
+.boxheadertop div {
+  display: flex;
+}
+.boxheadertop .menu {
+  width: 32px;
+  height: 32px;
+}
+.boxheadertop img {
+  width: 82px;
+  height: 38px;
+}
