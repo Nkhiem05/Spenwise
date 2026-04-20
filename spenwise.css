@@ -4,7 +4,7 @@ html {
 }
 
 header {
-  background-color: red;
+  background-color: rgb(237, 237, 237);
 }
 .boxheadertop {
   display: flex;
@@ -20,4 +20,5 @@ header {
 .boxheadertop img {
   width: 82px;
   height: 38px;
+  margin-left: 10px;
 }
