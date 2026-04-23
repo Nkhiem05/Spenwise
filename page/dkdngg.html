@@ -6,4 +6,18 @@
     <title>Document</title>
   </head>
   <body></body>
+  <script>
+    const gettoken = () => {
+      const url = new URLSearchParams(location.hash.substring(1));
+      const token = url.get("access_token");
+      return token;
+    };
+    const getuserinfo = async () => {
+      const token = gettoken();
+      let fetchtoken = await fetch(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`,
+      );
+      const res = await fetchtoken.json;
+    };
+  </script>
 </html>
