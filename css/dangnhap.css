@@ -118,6 +118,7 @@ h3 {
   left: 10px;
   bottom: 5px;
   color: #9b89db;
+  z-index: -1;
 }
 
 input::-ms-reveal,
@@ -131,5 +132,6 @@ input::-webkit-credentials-auto-fill-button {
   display: none !important;
   pointer-events: none;
   position: absolute;
+
   right: 0;
 }
