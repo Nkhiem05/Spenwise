@@ -3,10 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <title>Document</title>
   </head>
   <body></body>
   <script>
+    const supabaseUrl = "https://jeripzvqohgpadvejels.supabase.co";
+    const supabaseKey = "sb_publishable_jHamT3qfnxmjaV8IozKSRQ_89I6mfbm";
+
+    // Sửa lại dòng này để tránh trùng tên:
+    // Dùng window.supabase để gọi thư viện từ CDN
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
     const gettoken = () => {
       const url = new URLSearchParams(location.hash.substring(1));
       const token = url.get("access_token");
@@ -17,7 +24,72 @@
       let fetchtoken = await fetch(
         `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`,
       );
-      const res = await fetchtoken.json;
+      const res = await fetchtoken.json();
+      console.log(res);
+      return res;
     };
+
+    getuserinfo();
+
+    async function layChiTietTaikhoan(ggid) {
+      const { data, error } = await supabaseClient
+        .from("taikhoan")
+        .select("*")
+        .eq("ggid", ggid)
+        .single();
+
+      if (error) {
+        return "";
+      } else {
+        console.log("Thông tin tài khoản:", data);
+        return data;
+        // Ví dụ: console.log(data.ten, data.sodu);
+      }
+    }
+
+    async function kiemtradangnhap() {
+      try {
+        let user = await getuserinfo();
+        let dieukien = await layChiTietTaikhoan(user.sub);
+        if (dieukien.ggid == user.sub) {
+          console.log("tai khoan ton tai");
+          sessionStorage.setItem("id", dieukien.id);
+          sessionStorage.setItem("ten", dieukien.ten);
+          sessionStorage.setItem("avt", dieukien.avatar);
+          window.location.href =
+            "https://nkhiem05.github.io/Spenwise/page/spenwise.html";
+        } else {
+          console.log("taikhoan khong ton tai");
+          const { data, error } = await supabaseClient
+            .from("taikhoan")
+            .insert([
+              {
+                ggid: user.sub,
+                ten: user.family_name + " " + user.given_name,
+                avatar: user.picture,
+                email: user.email,
+              },
+            ])
+            .select();
+          if (error) {
+            alert("vui lòng thử lại!!!");
+          } else {
+            sessionStorage.setItem("id", data[0].id);
+            sessionStorage.setItem("ten", data[0].ten);
+            sessionStorage.setItem("avt", data[0].avatar);
+
+            window.location.href =
+              "https://nkhiem05.github.io/Spenwise/page/spenwise.html";
+            console.log(data[0]);
+          }
+        }
+      } catch (error) {
+        alert("có lỗi xảy ra vui lòng thử lại" + error);
+        window.location.href =
+          "https://nkhiem05.github.io/Spenwise/page/dangnhap.html";
+      }
+    }
+
+    kiemtradangnhap();
   </script>
 </html>
