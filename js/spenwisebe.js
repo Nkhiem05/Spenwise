@@ -1,7 +1,7 @@
 function kiemtradangnhap() {
-  let id = sessionStorage.get("id") ?? false;
-  let ten = sessionStorage.get("ten") ?? false;
-  let avt = sessionStorage.get("avt") ?? false;
+  let id = sessionStorage.getItem("id") ?? false;
+  let ten = sessionStorage.getItem("ten") ?? false;
+  let avt = sessionStorage.getItem("avt") ?? false;
   if (!id || !ten || !avt) {
     window.location.href =
       "https://nkhiem05.github.io/Spenwise/page/dangnhap.html";
