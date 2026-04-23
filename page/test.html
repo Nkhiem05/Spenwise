@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <h1>Kiểm tra kết nối Supabase</h1>
+  </body>
+
+  <script>
+    const supabaseUrl = "https://jeripzvqohgpadvejels.supabase.co";
+    const supabaseKey = "sb_publishable_jHamT3qfnxmjaV8IozKSRQ_89I6mfbm";
+
+    // Sửa lại dòng này để tránh trùng tên:
+    // Dùng window.supabase để gọi thư viện từ CDN
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+    async function fetchItems() {
+      const { data, error } = await supabaseClient // Dùng tên biến mới ở đây
+        .from("taikhoan")
+        .select("*");
+
+      if (error) {
+        console.error("Lỗi rồi:", error);
+      } else {
+        console.log("Dữ liệu từ bảng 'thu':", data);
+      }
+    }
+
+    // Gọi hàm để chạy thử
+    fetchItems();
+  </script>
+</html>
