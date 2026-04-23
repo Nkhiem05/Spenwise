@@ -12,6 +12,7 @@ header {
   display: flex;
   padding-top: 8px;
   justify-content: space-between;
+  margin: 0px 10px;
 }
 .boxheadertop div {
   display: flex;
@@ -24,7 +25,6 @@ header {
 .boxheadertop img {
   width: 82px;
   height: 38px;
-  margin-left: 10px;
 }
 
 .boxheadertop .avt {
@@ -39,4 +39,5 @@ header {
   margin-left: 10px;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+  color: blue;
 }
