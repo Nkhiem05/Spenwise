@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body,
+html {
+  margin: 0;
+  background-color: #ebeced;
+}
+.box {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  width: 70vw;
+}
+
+.formdangnhap {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.formdangnhap .boxinp {
+  display: flex;
+  flex-direction: column;
+}
+.formdangnhap .boxinp input {
+  width: 75vw;
+  height: 30px;
+  border-radius: 20px;
+  border: 0.5px rgba(0, 0, 0, 0.353) solid;
+}
+
+.formdangnhap .boxinp span {
+  margin-left: 14px;
+  font-size: 15px;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.411);
+}
+
+.formdangnhap button {
+  width: 75vw;
+  height: 30px;
+  border-radius: 20px;
+  border: 0.5px rgba(0, 0, 0, 0.353) solid;
+}
