@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 body,
 html {
   margin: 0;
@@ -9,9 +11,11 @@ header {
 .boxheadertop {
   display: flex;
   padding-top: 8px;
+  justify-content: space-between;
 }
 .boxheadertop div {
   display: flex;
+  align-items: center;
 }
 .boxheadertop .menu {
   width: 32px;
@@ -21,4 +25,18 @@ header {
   width: 82px;
   height: 38px;
   margin-left: 10px;
+}
+
+.boxheadertop .avt {
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.boxheadertop .name {
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
