@@ -13,9 +13,16 @@ html {
   align-items: center;
 }
 .logo {
+  margin-top: 70px;
+  margin-bottom: 15px;
   width: 70vw;
 }
-
+h3 {
+  margin: 0;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  color: blue;
+}
 .formdangnhap {
   background-color: white;
   border-radius: 10px;
@@ -31,12 +38,29 @@ html {
 .formdangnhap .boxinp {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .formdangnhap .boxinp input {
-  width: 75vw;
+  padding: 3px 10px;
+  width: 70vw;
   height: 30px;
   border-radius: 20px;
   border: 0.5px rgba(0, 0, 0, 0.353) solid;
+  outline: none;
+}
+.formdangnhap .boxinp .pass {
+  width: calc(70vw - 40px);
+  padding-right: 50px;
+}
+.formdangnhap .boxinp img {
+  width: 25px;
+  position: absolute;
+  right: 10px;
+  top: 52%;
+  bottom: 50%;
+}
+.formdangnhap .boxinp input:focus {
+  border: 0.5px rgb(60, 57, 190) solid;
 }
 
 .formdangnhap .boxinp span {
@@ -47,8 +71,65 @@ html {
 }
 
 .formdangnhap button {
+  margin-top: 5px;
   width: 75vw;
-  height: 30px;
+  height: 35px;
   border-radius: 20px;
   border: 0.5px rgba(0, 0, 0, 0.353) solid;
+  font-size: 16px;
+}
+
+.formdangnhap .dangnhap {
+  margin-top: 25px;
+  background-color: #6f9efc;
+  border: none;
+  color: white;
+}
+.formdangnhap .google img {
+  width: 25px;
+}
+.formdangnhap .google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px #6f9efc solid;
+  background-color: white;
+}
+
+.formdangnhap .google span {
+  color: #6f9efc;
+}
+.formdangnhap .taotaikhoan {
+  margin-top: 20px;
+  border: #9b89db 1px solid;
+  color: #9b89db;
+  background-color: white;
+}
+.quenmk {
+  font-size: 13px;
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+.banquyen {
+  position: fixed;
+  left: 10px;
+  bottom: 5px;
+  color: #9b89db;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
 }
