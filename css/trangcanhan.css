@@ -20,8 +20,8 @@ html {
   align-items: center;
 }
 .khungavt {
-  width: 23vw;
-  height: 23vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
   border: 1px rgba(0, 0, 0, 0.314) solid;
   position: relative;
@@ -38,8 +38,8 @@ html {
   
 } */
 .khungavt img {
-  width: 23vw;
-  height: 23vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
 }
 .khungtenavt p {
@@ -72,7 +72,7 @@ html {
 
 .boxtien {
   display: flex;
-  gap: 16px;
+  gap: 2vw;
   margin: auto;
   justify-content: center;
 }
@@ -84,10 +84,13 @@ html {
 .label {
   margin: 0;
   margin-bottom: 5px;
+  font-size: 3.5vw;
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .boxsodu {
-  width: 42.5vw;
+  width: 41vw;
   height: 24vw;
   background-color: #dbdefd;
   border-radius: 10px;
@@ -108,7 +111,7 @@ html {
   gap: 10px;
 }
 .boxthu {
-  width: 42.5vw;
+  width: 41vw;
   background-color: #a5ffdf;
   height: calc(24vw / 2 - 5px);
   border-radius: 10px;
@@ -116,7 +119,7 @@ html {
 }
 
 .boxchi {
-  width: 42.5vw;
+  width: 41vw;
   background-color: #ffe8a6;
   height: calc(24vw / 2 - 5px);
   border-radius: 10px;
@@ -148,7 +151,7 @@ html {
   padding: 15px;
   border-radius: 10px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .thongtin th {
