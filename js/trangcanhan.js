@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       "https://res.cloudinary.com/dfnssx2gm/image/upload/v1777105136/download_3_m149fh.jpg";
     document.getElementById("avt").src = data.avatar;
     document.getElementById("name").textContent = data.ten;
-    document.getElementById("emailname").textContent = data.email;
     document.getElementById("sodu").textContent =
       data.sodu.toLocaleString("vi-VN");
     document.getElementById("thu").textContent =
