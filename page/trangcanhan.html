@@ -5,30 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/trangcanhan.css" />
     <title>Trang cá nhân</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/kiemtradangnhap.js"></script>
   </head>
   <body>
     <div class="anhbia">
       <img
+        id="bia"
         src="https://res.cloudinary.com/dfnssx2gm/image/upload/v1777105136/download_3_m149fh.jpg"
         alt=""
       />
     </div>
     <div class="box">
       <div class="khungtenavt">
-        <div class="khungavt"><img src="avt.jpg" alt="" class="avt" /></div>
+        <div class="khungavt">
+          <img
+            id="avt"
+            src="https://res.cloudinary.com/dfnssx2gm/image/upload/v1777108642/download_2_yvfgfo.jpg"
+            alt=""
+            class="avt"
+          />
+          <div class="thayavt"></div>
+        </div>
         <div class="khungten">
-          <p class="name">Phan Nhật Khiêm</p>
-          <p class="emailname">phankhuem@gmail.com</p>
+          <p id="name" class="name">--</p>
+          <p id="emailname" class="emailname">---</p>
+        </div>
+        <svg
+          onclick="dangxuat()"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+          />
+        </svg>
+      </div>
+      <div class="boxlbtien">
+        <div style="display: block">
+          <div class="label">Tháng này:</div>
+          <div class="boxtien">
+            <div class="boxsodu">
+              <p>Số dư</p>
+              <p id="sodu">---</p>
+            </div>
+            <div class="boxthuchi">
+              <div class="boxthu">
+                <p class="labelthu">Thu nhập</p>
+                <p id="thu">---</p>
+              </div>
+              <div class="boxchi">
+                <p class="labelchi">Chi tiêu</p>
+                <p id="chi">---</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <p>Tháng này;
-            <div class="boxtien">
-                <div class="boxsodu"><p>Số dư</p></div>
-                <div class="boxthuchi"><div class="boxthu"><p class="labelthu">Thu nhập</p></div><div class="boxchi"><p class="labelchi">Chi tiêu</p></div></div>
-            </div>
-        </p>
-      </div>
+      <table class="thongtin">
+        <tr>
+          <th>Email:</th>
+          <th id="email">---</th>
+        </tr>
+        <tr>
+          <th>Ngày sinh:</th>
+          <th id="namsinh"></th>
+        </tr>
+        <tr>
+          <th>Ngày tham gia</th>
+          <th id="ngaythamgia">---</th>
+        </tr>
+      </table>
+      <div onclick="back()" class="back"><p>← Trang chủ</p></div>
     </div>
   </body>
+  <script src="../js/trangcanhan.js"></script>
 </html>

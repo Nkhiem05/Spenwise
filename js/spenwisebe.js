@@ -9,5 +9,20 @@ function kiemtradangnhap() {
   console.log(id + " " + ten + " " + avt);
 }
 
-kiemtradangnhap();
-setInterval(kiemtradangnhap, 30000);
+// kiemtradangnhap();
+// setInterval(kiemtradangnhap, 30000);
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const { data, error } = await supabaseClient
+    .from("taikhoan")
+    .select("*")
+    .eq("id", sessionStorage.getItem("id"))
+    .single();
+  if (error) {
+    window.location.href =
+      "https://nkhiem05.github.io/Spenwise/page/dangnhap.html";
+  } else {
+    document.getElementById("avt").src = data.avatar;
+    document.getElementById("name").src = data.ten;
+  }
+});

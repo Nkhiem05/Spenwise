@@ -7,11 +7,11 @@ html {
 
 .anhbia {
   width: 100%;
-  height: 28.5vh;
+  height: 23.5vh;
 }
 .anhbia img {
   width: 100%;
-  height: 28.5vh;
+  height: 23.5vh;
 }
 
 .khungtenavt {
@@ -23,7 +23,20 @@ html {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  border: 1px rgba(0, 0, 0, 0.314) solid;
+  position: relative;
 }
+
+/* .thayavt{
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  background-color: red;
+  bottom: 0px;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  
+} */
 .khungavt img {
   width: 120px;
   height: 120px;
@@ -33,6 +46,7 @@ html {
   padding: 0;
   margin: 0;
 }
+
 .khungtenavt .khungten {
   margin-left: 15px;
 }
@@ -48,17 +62,42 @@ html {
   color: rgba(0, 0, 0, 0.5);
   margin-left: 10px;
 }
+.khungtenavt svg {
+  width: 30px;
+  color: red;
+  margin-left: 15px;
+}
 
 .boxtien {
   display: flex;
   gap: 16px;
+  margin: auto;
+  justify-content: center;
+}
+.boxlbtien {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.label {
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .boxsodu {
-  width: 173px;
+  width: 42.5vw;
   height: 112px;
   background-color: #dbdefd;
   border-radius: 10px;
+  padding: 2vw;
+}
+
+.boxsodu p {
+  margin: 0;
+  color: #0e5fff;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
 }
 
 .boxtien .boxthuchi {
@@ -67,20 +106,66 @@ html {
   gap: 10px;
 }
 .boxthu {
-  width: 173px;
+  width: 42.5vw;
   background-color: #a5ffdf;
   height: calc(112px / 2 - 5px);
   border-radius: 10px;
+  padding: 1vw;
 }
 
 .boxchi {
-  width: 173px;
+  width: 42.5vw;
   background-color: #ffe8a6;
   height: calc(112px / 2 - 5px);
   border-radius: 10px;
+  padding: 1vw;
 }
 
 .boxchi p,
 .boxthu p {
   margin: 0;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+}
+
+.boxchi p {
+  color: #ae641a;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.boxthu p {
+  color: #14af00;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.thongtin {
+  width: 90%;
+  border: 1px #5890ff solid;
+  padding: 15px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.thongtin th {
+  text-align: left;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, 0.674);
+}
+.back {
+  width: fit-content;
+  background-color: rgb(115, 115, 248);
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.back p {
+  margin: 0;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
 }
