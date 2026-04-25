@@ -9,12 +9,10 @@ function kiemtradangnhap() {
   console.log(id + " " + ten + " " + avt);
 }
 
-// kiemtradangnhap();
-// setInterval(kiemtradangnhap, 30000);
+kiemtradangnhap();
+setInterval(kiemtradangnhap, 30000);
 
 const supabaseUrl = "https://jeripzvqohgpadvejels.supabase.co";
 const supabaseKey = "sb_publishable_jHamT3qfnxmjaV8IozKSRQ_89I6mfbm";
 
-// Sửa lại dòng này để tránh trùng tên:
-// Dùng window.supabase để gọi thư viện từ CDN
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
