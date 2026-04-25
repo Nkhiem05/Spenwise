@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", sessionStorage.getItem("id"))
+    .eq("id", 1)
     .single();
   if (error) {
-    window.location.href =
-      "https://nkhiem05.github.io/Spenwise/page/dangnhap.html";
+    // window.location.href =
+    //   "https://nkhiem05.github.io/Spenwise/page/dangnhap.html";
   } else {
     console.log(data);
     document.getElementById("bia").src =
