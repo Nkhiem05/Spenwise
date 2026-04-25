@@ -15,7 +15,7 @@ html {
 }
 
 .khungtenavt {
-  transform: translate(3vw, -3vh);
+  transform: translate(3vw, -1.5vh);
   display: flex;
   align-items: center;
 }
@@ -52,7 +52,7 @@ html {
   margin-left: 15px;
 }
 .khungtenavt .name {
-  font-size: 4vw;
+  font-size: 6vw;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
 }
@@ -64,7 +64,7 @@ html {
   margin-left: 10px;
 }
 .khungtenavt svg {
-  width: 4vw;
+  width: 6vw;
   color: red;
   margin-left: 15px;
   font-size: 4vw;
