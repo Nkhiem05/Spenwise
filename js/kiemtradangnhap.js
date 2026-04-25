@@ -9,8 +9,8 @@ function kiemtradangnhap() {
   console.log(id + " " + ten + " " + avt);
 }
 
-// kiemtradangnhap();
-// setInterval(kiemtradangnhap, 30000);
+kiemtradangnhap();
+setInterval(kiemtradangnhap, 30000);
 
 const supabaseUrl = "https://jeripzvqohgpadvejels.supabase.co";
 const supabaseKey = "sb_publishable_jHamT3qfnxmjaV8IozKSRQ_89I6mfbm";

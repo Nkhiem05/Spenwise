@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", sessionStorage.getItem("id") ?? 1)
+    .eq("id", sessionStorage.getItem("id"))
     .single();
   if (error) {
     window.location.href =

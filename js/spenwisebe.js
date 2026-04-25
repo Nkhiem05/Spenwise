@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // kiemtradangnhap();
+  kiemtradangnhap();
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", 1)
+    .eq("id", sessionStorage.getItem("id"))
     .single();
   if (error) {
     window.location.href =
