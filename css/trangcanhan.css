@@ -15,7 +15,7 @@ html {
 }
 
 .khungtenavt {
-  transform: translate(3vw, -1.5vh);
+  transform: translate(3vw, -4vh);
   display: flex;
   align-items: center;
 }
@@ -88,7 +88,7 @@ html {
 
 .boxsodu {
   width: 42.5vw;
-  height: 112px;
+  height: 18vw;
   background-color: #dbdefd;
   border-radius: 10px;
   padding: 2vw;
@@ -99,7 +99,7 @@ html {
   color: #0e5fff;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
-  font-size: 17px;
+  font-size: 3.5vw;
 }
 
 .boxtien .boxthuchi {
@@ -110,7 +110,7 @@ html {
 .boxthu {
   width: 42.5vw;
   background-color: #a5ffdf;
-  height: calc(112px / 2 - 5px);
+  height: calc(18vw / 2 - 5px);
   border-radius: 10px;
   padding: 1vw;
 }
@@ -118,7 +118,7 @@ html {
 .boxchi {
   width: 42.5vw;
   background-color: #ffe8a6;
-  height: calc(112px / 2 - 5px);
+  height: calc(18vw / 2 - 5px);
   border-radius: 10px;
   padding: 1vw;
 }
@@ -128,7 +128,7 @@ html {
   margin: 0;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
-  font-size: 17px;
+  font-size: 3vw;
 }
 
 .boxchi p {
@@ -155,6 +155,7 @@ html {
   text-align: left;
   font-weight: normal;
   font-family: "Roboto", sans-serif;
+  font-size: 3vw;
   color: rgba(0, 0, 0, 0.674);
 }
 .back {
