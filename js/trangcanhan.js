@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", sessionStorage.getItem("id"))
+    .eq("id", sessionStorage.getItem("id") ?? 1)
     .single();
   if (error) {
     window.location.href =
@@ -29,9 +29,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("avt").src = data.avatar;
     document.getElementById("name").textContent = data.ten;
     document.getElementById("emailname").textContent = data.email;
-    document.getElementById("sodu").textContent = data.sodu.tol;
-    document.getElementById("thu").textContent = data.dathu;
-    document.getElementById("chi").textContent = data.dachi;
+    document.getElementById("sodu").textContent =
+      data.sodu.toLocaleString("vi-VN");
+    document.getElementById("thu").textContent =
+      data.dathu.toLocaleString("vi-VN");
+    document.getElementById("chi").textContent =
+      data.dachi.toLocaleString("vi-VN");
     document.getElementById("email").textContent = data.email;
     document.getElementById("namsinh").textContent = data.namsinh;
     document.getElementById("ngaythamgia").textContent = data.ngaytao;
