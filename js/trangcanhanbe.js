@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", sessionStorage.getItem("id") ?? 1)
+    .eq("id", sessionStorage.getItem("id"))
     .single();
   if (error) {
     window.location.href =
@@ -49,7 +49,7 @@ document.getElementById("luu").addEventListener("click", async () => {
     const form = new FormData();
     form.append("file", file);
     form.append("upload_preset", cloudpreset);
-    formData.append("folder", "Spenwise");
+    form.append("folder", "Spenwise");
     try {
       const res = await fetch(
         `https://api.cloudinary.com/v1_1/${cloudename}/image/upload`,

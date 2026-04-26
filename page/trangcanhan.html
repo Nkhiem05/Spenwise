@@ -104,7 +104,7 @@
           </svg>
           <span>Đổi ảnh đại diện</span>
         </div>
-        <div class="xemavt">
+        <div onclick="showavt()" class="xemavt">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -123,11 +123,15 @@
         </div>
       </div>
     </div>
-    <div id="thayimgtam" class="overlayimg">
+    <div id="thayimgtam" class="overlayimg" onclick="closemenu('thayimgtam')">
       <img id="imgtam" class="img" src="" alt="" />
-      <button id="luu">Lưu</button>
+      <button id="luu" onclick="event.stopPropagation()">Lưu</button>
     </div>
     <input id="inpavt" type="file" accept="img/*" hidden />
+    <div id="showavt" class="overlayimg" onclick="closemenu('thayimgtam')">
+      <img id="showimgavt" class="img" src="" alt="" />
+      <button id="luu" onclick="event.stopPropagation()">Lưu</button>
+    </div>
   </body>
   <script src="../js/trangcanhanfe.js"></script>
   <script src="../js/trangcanhanbe.js"></script>

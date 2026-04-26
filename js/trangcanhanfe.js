@@ -16,3 +16,9 @@ document.getElementById("inpavt").addEventListener("change", async (e) => {
     openmenu("thayimgtam");
   }
 });
+
+function showavt() {
+  document.getElementById("showimgavt").src =
+    document.getElementById("avt").src;
+  openmenu("showavt");
+}
