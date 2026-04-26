@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data, error } = await supabaseClient
     .from("taikhoan")
     .select("*")
-    .eq("id", sessionStorage.getItem("id") ?? 1)
+    .eq("id", sessionStorage.getItem("id"))
     .single();
   if (error) {
     window.location.href =
@@ -38,4 +38,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("namsinh").textContent = data.namsinh;
     document.getElementById("ngaythamgia").textContent = data.ngaytao;
   }
+});
+
+document.getElementById("luu").addEventListener("click", async () => {
+  document.getElementById("luu").innerHTML = `<div class="hieuung"></div>`;
+  let file = document.getElementById("inpavt").files[0];
+  if (file) {
+    const cloudename = "dfnssx2gm";
+    const cloudpreset = "ml_default";
+    const form = new FormData();
+    form.append("file", file);
+    form.append("upload_preset", cloudpreset);
+    formData.append("folder", "Spenwise");
+    try {
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${cloudename}/image/upload`,
+        {
+          method: "POST",
+          body: form,
+        },
+      );
+      let dataimg = await res.json();
+      console.log(dataimg.secure_url);
+
+      if (dataimg.secure_url) {
+        const { data, error } = await supabaseClient
+          .from("taikhoan")
+          .update({
+            avatar: dataimg.secure_url,
+          })
+          .eq("id", sessionStorage.getItem("id"))
+          .select();
+
+        if (error) {
+          console.error("Lỗi cập nhật Supabase:", error.message);
+          alert("Không thể cập nhật hồ sơ!");
+          closemenu("thayimgtam");
+          document.getElementById("inpavt").value = "";
+          closemenu("ovdoiavt");
+        } else {
+          document.getElementById("avt").src = data[0].avatar;
+          document.getElementById("inpavt").value = "";
+          closemenu("thayimgtam");
+          closemenu("ovdoiavt");
+        }
+      }
+
+      console.log(data);
+    } catch (error) {
+      console.log("có lỗi xảy ra vui lòng thử lại");
+    }
+  }
+  document.getElementById("luu").innerHTML = "";
+  document.getElementById("luu").textContent = "Lưu";
 });

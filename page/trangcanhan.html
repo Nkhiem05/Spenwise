@@ -87,7 +87,7 @@
     <div onclick="closemenu('ovdoiavt')" id="ovdoiavt" class="overlay">
       <div class="menuavt" onclick="event.stopPropagation()">
         <div class="icon"></div>
-        <div class="doiavt">
+        <div id="doiavt" class="doiavt">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -123,6 +123,11 @@
         </div>
       </div>
     </div>
+    <div id="thayimgtam" class="overlayimg">
+      <img id="imgtam" class="img" src="" alt="" />
+      <button id="luu">Lưu</button>
+    </div>
+    <input id="inpavt" type="file" accept="img/*" hidden />
   </body>
   <script src="../js/trangcanhanfe.js"></script>
   <script src="../js/trangcanhanbe.js"></script>
