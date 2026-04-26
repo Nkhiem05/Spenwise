@@ -175,12 +175,20 @@ html {
   color: white;
   cursor: pointer;
 }
-
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.141);
+}
 .menuavt {
   width: 100%;
-  height: 200px;
+  height: 30vh;
   background-color: rgb(255, 255, 255);
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   border-top-left-radius: 10px;
@@ -188,6 +196,18 @@ html {
   box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  animation: menu 0.4s ease-in-out;
+}
+
+@keyframes menu {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .icon {
   width: 8vw;
@@ -196,6 +216,7 @@ html {
   margin: 0 auto;
   margin-top: 10px;
   border-radius: 50px;
+  margin-bottom: 15px;
 }
 .doiavt,
 .xemavt {
@@ -204,9 +225,19 @@ html {
   border-bottom: 1px rgba(0, 0, 0, 0.492) solid;
 }
 
+.doiavt span,
+.xemavt span {
+  font-family: "Roboto", sans-serif;
+  font-size: 4.5vw;
+  stroke-width: 1px;
+  color: rgba(0, 0, 0, 0.638);
+}
+
 .doiavt svg,
 .xemavt svg {
   width: 9vw;
   margin: 10px 15px;
   margin-right: 5px;
+  stroke-width: 1px;
+  color: rgba(0, 0, 0, 0.463);
 }
